@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>カフェデータ投稿</title>
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+  </head>
+
+  <body>
+   <a href="/top/">トップへ</a>
+   <a href="/cafemap/feedCafe/">喫茶店リスト</a>
+   #if($reqParam.key != "")
+   	<a href="/cafemap/handleCafeReview/?cafeId=$reqParam.key" targer="_blank" >喫茶店レビューへ</a>
+   #end
+   <hr />
+   <h1>データ入力画面</h1>
+   
+   	<form action="/cafemap/postCafe/" method="POST">
+   		<p>エリア系情報</p>
+   		店名称:<input name="storeName" value="#if($reqParam.storeName)$reqParam.storeName#end" />
+   		店説明:<textarea name="storeCaption">#if($reqParam.storeCaption)$reqParam.storeCaption#end</textarea><br />
+   		店住所:<input name="storeAddress" value="#if($reqParam.storeAddress)$reqParam.storeAddress#end" size="50" />
+   		<br />
+   		緯度:<input name="lat" value="#if($reqParam.lat)$reqParam.lat#end" />
+   		経度:<input name="lon" value="#if($reqParam.lon)$reqParam.lon#end" />
+   		<br />
+   		電話番号:<input name="phoneNumber" value="#if($reqParam.phoneNumber)$reqParam.phoneNumber#end" />
+   		郵便番号:<input name="zipCode" value="#if($reqParam.zipCode)$reqParam.zipCode#end" />
+   		<p>こだわり系</p>
+   		喫煙OK:<input type="checkbox" name="tabako" value="1" #if($reqParam.tabako == "1") checked="true" #end />
+   		禁煙:<input type="checkbox" name="kinen" value="1" #if($reqParam.kinen == "1") checked="true" #end />
+   		個室あり:<input type="checkbox" name="koshitsu" value="1" #if($reqParam.koshitsu == "1") checked="true" #end />
+   		wifi:<input type="checkbox" name="wifi" value="1" #if($reqParam.wifi == "1") checked="true" #end />
+   		pc電源あり:<input type="checkbox" name="pc" value="1" #if($reqParam.pc == "1") checked="true" #end />
+   		深夜営業あり:<input type="checkbox" name="shinya" value="1" #if($reqParam.shinya == "1") checked="true" #end />
+   		テラスあり:<input type="checkbox" name="terace" value="1" #if($reqParam.terace == "1") checked="true" #end />
+   		ペットOK:<input type="checkbox" name="pet" value="1" #if($reqParam.pet == "1") checked="true" #end />
+   		<p>雰囲気</p>
+   		デート向き:
+   		<select name="dateMuki">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.dateMuki == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.dateMuki == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.dateMuki == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.dateMuki == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.dateMuki == "5")selected="true"#end>5</option>
+   		</select>
+   		
+   		ひとりでゆったり:
+   		<select name="only">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.only == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.only == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.only == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.only == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.only == "5")selected="true"#end>5</option>
+   		</select>
+   		
+   		友達とまったり:
+   		<select name="friendMattari">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.friendMattari == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.friendMattari == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.friendMattari == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.friendMattari == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.friendMattari == "5")selected="true"#end>5</option>
+   		</select>
+   		多人数OK:
+   		<select name="manyPerson">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.manyPerson == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.manyPerson == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.manyPerson == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.manyPerson == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.manyPerson == "5")selected="true"#end>5</option>
+   		</select>
+   		
+   		
+   		<p>その他</p>
+   		イイネ:<input type="checkbox" name="iine" value="1" />
+   		店舗種類:<select name="storeFlag">
+   				<option value=""></option>
+   				<option value="1" #if($reqParam.storeFlag == "1")selected="true"#end>スターバックス</option>
+   				<option value="2" #if($reqParam.storeFlag == "2")selected="true"#end>ドトール</option>
+   				<option value="3" #if($reqParam.storeFlag == "3")selected="true"#end>タリーズ</option>
+   		 	    <option value="4" #if($reqParam.storeFlag == "4")selected="true"#end>サンマルクカフェ</option>
+   		 	    <option value="5" #if($reqParam.storeFlag == "5")selected="true"#end>エクセルシオール</option>
+   		 	    <option value="6" #if($reqParam.storeFlag == "6")selected="true"#end>シアトルズベスト</option>
+   		 	    <option value="7" #if($reqParam.storeFlag == "7")selected="true"#end>ベローチェ</option>
+   		 	    <option value="8" #if($reqParam.storeFlag == "8")selected="true"#end>カフェドクリエ</option>
+   		 	    <option value="9" #if($reqParam.storeFlag == "9")selected="true"#end>コメダ珈琲</option>
+   		 	    <option value="Z" #if($reqParam.storeFlag == "Z")selected="true"#end>個人店</option>
+   		 	   </select>
+   		<input type="hidden" name="updateCount" value="#if($reqParam.updateCount != "" && $reqParam.updateCount)$reqParam.updateCount#end" />
+   		<input type="hidden" name="key" value="#if($reqParam.key != "" && $reqParam.key)$reqParam.key#end" />
+   		<input type="hidden" name="nickName" value="#if($reqParam.nickName != "" && $reqParam.nickName)$reqParam.nickName#end" />
+   		<input type="hidden" name="userSendFlag" value="#if($reqParam.userSendFlag != "" && $reqParam.userSendFlag)$reqParam.userSendFlag#end" />
+   		<input type="submit" name="dataPost" value="送信" />
+   		#if($reqParam.key != "" && $reqParam.key && $reqParam.deleteFlag != "1")
+   			<input type="submit" name="delete" value="削除" />
+   		#elseif($reqParam.key != "" && $reqParam.key && $reqParam.deleteFlag == "1")
+   			<input type="submit" name="hukkatsu" value="復活" />
+		#end
+	</form>
+
+  </body>
+</html>

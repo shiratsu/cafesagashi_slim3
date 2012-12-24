@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>駅一覧</title>
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+  </head>
+  <body>
+<table>
+<tr>
+<td><a href="/top/">トップページへ</a></td>
+</tr>
+</table>
+   	<form name="cafeSearch" action="/area/handleAreaData/" method="GET">
+   		駅<br />
+   		<input type="text" name="stationName" value="#if($reqParam.stationName)$reqParam.stationName#end" /><br />
+   		<input type="submit" name="search" value="検索" />
+   	</form>
+   	#if($searchFlag == true)
+   		検索件数：$searchCount件<br />
+   		<hr />
+   		 #foreach($data in $stationList)
+   		 	<font color="red">基本情報</font><br />
+   		 	<font color="red">id：</font>$data.key&nbsp;
+   		 	<font color="red">鉄道会社コード：</font>$data.rcCode &nbsp;
+   		 	<font color="red">鉄道会社名：</font>$data.rcName &nbsp;
+   		 	<font color="red">路線コード：</font>$data.lineCode &nbsp;
+   		 	<font color="red">路線名：</font>$data.lineName &nbsp;
+   		 	<font color="red">路線ソート：</font>$data.lineSort &nbsp;
+   		 	<br />
+   		 	<font color="red">駅グループ：</font>$data.stationGroup &nbsp;
+   		 	<font color="red">駅ソート：</font>$data.stationSort &nbsp;
+   		 	<font color="red">駅コード：</font>$data.stationCode &nbsp;
+   		 	<font color="red">駅名：</font>$data.stationName &nbsp;
+   		 	<font color="red">都道府県コード：</font>$data.prefCode &nbsp;
+			<br />
+			<font color="red">緯度：</font>$data.lat &nbsp;
+			<font color="red">経度：</font>$data.lon &nbsp;
+			<font color="red">geohash4：</font>$data.geohash4 &nbsp;
+			<font color="red">geohash5：</font>$data.geohash5 &nbsp;
+			<font color="red">geohash6：</font>$data.geohash6 &nbsp;
+			<font color="red">geohash8：</font>$data.geohash8 &nbsp;
+			<font color="red">geohashAll：</font>$data.geohashAll &nbsp;
+			<font color="red">geohashAround：</font>$data.geohashAround &nbsp;
+			<font color="red">更新時間：</font>$data.updateDate &nbsp;
+			<hr />
+		#end
+	#end
+
+</body>
+</html>

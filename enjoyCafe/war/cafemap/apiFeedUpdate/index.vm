@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+ <statusCode>200</statusCode>
+ <total>$searchCount</total>
+#foreach($data in $cafeList)
+ <Result>
+	<key>$data.key</key>
+	<storeSubName>$data.storeSubName</storeSubName>
+	<storeMainName>$data.storeMainName</storeMainName>
+	<storeName>$data.storeName</storeName>
+	<storeCaption>$data.storeCaption</storeCaption>
+	<zipCode>$data.zipCode</zipCode>
+	<phoneNumber>$data.phoneNumber</phoneNumber>
+	<storeFlag>$data.storeFlag</storeFlag>
+	<storeAddress>$data.storeAddress</storeAddress>
+	<lat>$data.lat</lat>
+	<lon>$data.lon</lon>
+	<tabako>$data.tabako</tabako>
+	<kinen>$data.kinen</kinen>
+	<pc>$data.pc</pc>
+	<koshitsu>$data.koshitsu</koshitsu>
+	<wifi>$data.wifi</wifi>
+	<shinya>$data.shinya</shinya>
+	<terace>$data.terace</terace>
+	<pet>$data.pet</pet>
+	<iine>$data.iine</iine>
+	<updateTime>$data.updateTime</updateTime>
+	<userSendFlag>$data.userSendFlag</userSendFlag>
+	<delFlag>$data.deleteFlag</delFlag>
+ </Result>
+#end
+</Results>

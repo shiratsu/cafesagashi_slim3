@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+ <statusCode>200</statusCode>
+ <total>$searchCount</total>
+#foreach($data in $cafeList)
+ <Result>
+	<key>$data.key</key>
+	<storeSubName>$data.storeSubName</storeSubName>
+	<storeMainName>$data.storeMainName</storeMainName>
+	<storeName>$data.storeName</storeName>
+	<storeCaption>$data.storeCaption</storeCaption>
+	<zipCode>$data.zipCode</zipCode>
+	<phoneNumber>$data.phoneNumber</phoneNumber>
+	<storeFlag>$data.storeFlag</storeFlag>
+	<storeAddress>$data.storeAddress</storeAddress>
+	<updateCount>$data.updateCount</updateCount>
+	<lat>$data.lat</lat>
+	<lon>$data.lon</lon>
+	<geohash4>$data.geohash4</geohash4>
+	<geohash5>$data.geohash5</geohash5>
+	<geohash6>$data.geohash6</geohash6>
+	<geohash8>$data.geohash8</geohash8>
+	<geohashAll>$data.geohashAll</geohashAll>
+	<geohashAround>$data.geohashAround</geohashAround>
+	<tabako>$data.tabako</tabako>
+	<kinen>$data.kinen</kinen>
+	<pc>$data.pc</pc>
+	<koshitsu>$data.koshitsu</koshitsu>
+	<wifi>$data.wifi</wifi>
+	<shinya>$data.shinya</shinya>
+	<terace>$data.terace</terace>
+	<pet>$data.pet</pet>
+	<dateMuki>$data.dateMuki</dateMuki>
+	<only>$data.only</only>
+	<friendMattari>$data.friendMattari</friendMattari>
+	<manyPerson>$data.manyPerson</manyPerson>
+	<iine>$data.iine</iine>
+	<updateTime>$data.updateTime</updateTime>
+	<userSendFlag>$data.userSendFlag</userSendFlag>
+	<delFlag>$data.deleteFlag</delFlag>
+ </Result>
+#end
+</Results>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+ <statusCode>200</statusCode>
+ <Position>
+ 	<positionlat>$position.lat</positionlat>
+	<positionlon>$position.lon</positionlon>
+	<positiongeohash4>$position.geohash4</positiongeohash4>
+	<positiongeohash5>$position.geohash5</positiongeohash5>
+	<positiongeohash6>$position.geohash6</positiongeohash6>
+	<positiongeohash8>$position.geohash8</positiongeohash8>
+	<positiongeohashAll>$position.geohashAll</positiongeohashAll>
+ </Position>
+</Results>

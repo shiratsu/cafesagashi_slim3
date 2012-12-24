@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+ <statuCode>$errorCode</statuCode>
+ <name>$errorMessage</name>
+ <Position>
+ </Position>
+ <Result>
+ </Result>
+</Results>

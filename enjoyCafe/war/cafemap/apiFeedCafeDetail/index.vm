@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+<statusCode>200</statusCode>
+	<Result>
+		<key>$reqParam.key</key>
+		<storeSubName>$reqParam.storeSubName</storeSubName>
+		<storeMainName>$reqParam.storeMainName</storeMainName>
+		<storeName>$reqParam.storeName</storeName>
+		<storeCaption>$reqParam.storeCaption</storeCaption>
+		<zipCode>$reqParam.zipCode</zipCode>
+		<phoneNumber>$reqParam.phoneNumber</phoneNumber>
+		<storeFlag>$reqParam.storeFlag</storeFlag>
+		<storeAddress>$reqParam.storeAddress</storeAddress>
+		<updateCount>$reqParam.updateCount</updateCount>
+		<lat>$reqParam.lat</lat>
+		<lon>$reqParam.lon</lon>
+		<tabako>$reqParam.tabako</tabako>
+		<kinen>$reqParam.kinen</kinen>
+		<pc>$reqParam.pc</pc>
+		<koshitsu>$reqParam.koshitsu</koshitsu>
+		<wifi>$reqParam.wifi</wifi>
+		<shinya>$reqParam.shinya</shinya>
+		<terace>$reqParam.terace</terace>
+		<pet>$reqParam.pet</pet>
+		<dateMuki>$reqParam.dateMuki</dateMuki>
+		<only>$reqParam.only</only>
+		<friendMattari>$reqParam.friendMattari</friendMattari>
+		<manyPerson>$reqParam.manyPerson</manyPerson>
+		<iine>$reqParam.iine</iine>
+		<userSendFlag>$reqParam.userSendFlag</userSendFlag>
+		<delFlag>$reqParam.deleteFlag</delFlag>
+	</Result>
+</Results>

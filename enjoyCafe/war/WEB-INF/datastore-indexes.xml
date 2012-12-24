@@ -1,0 +1,52 @@
+<!-- Indices written at Fri, 27 Aug 2010 11:24:08 UTC -->
+
+<datastore-indexes autoGenerate="true">
+
+    <datastore-index kind="cafeMaster" ancestor="false" source="manual">
+        <property name="deleteFlag" direction="asc"/>
+        <property name="geohash4" direction="asc"/>
+        <property name="kinen" direction="asc"/>
+        <property name="pc" direction="asc"/>
+        <property name="pet" direction="asc"/>
+        <property name="shinya" direction="asc"/>
+        <property name="tabako" direction="asc"/>
+        <property name="terace" direction="asc"/>
+        <property name="wifi" direction="asc"/>
+        <property name="storeFlag" direction="asc"/>
+    </datastore-index>
+	
+	<datastore-index kind="cafeMaster" ancestor="false" source="manual">
+        <property name="deleteFlag" direction="asc"/>
+        <property name="geohash4" direction="asc"/>
+        <property name="kinen" direction="asc"/>
+        <property name="pet" direction="asc"/>
+        <property name="shinya" direction="asc"/>
+
+        <property name="tabako" direction="asc"/>
+        <property name="terace" direction="asc"/>
+        <property name="wifi" direction="asc"/>
+        <property name="storeFlag" direction="asc"/>
+    </datastore-index>
+    
+    <datastore-index kind="cafeMaster" ancestor="false" source="manual">
+        <property name="deleteFlag" direction="asc"/>
+        <property name="geohash4" direction="asc"/>
+        <property name="kinen" direction="asc"/>
+        <property name="shinya" direction="asc"/>
+        <property name="tabako" direction="asc"/>
+        <property name="terace" direction="asc"/>
+        <property name="wifi" direction="asc"/>
+        <property name="storeFlag" direction="asc"/>
+    </datastore-index>
+
+
+    <datastore-index kind="CafeReview" ancestor="false" source="manual">
+        <property name="cafeId" direction="asc"/>
+        <property name="updateDate" direction="asc"/>
+    </datastore-index>
+	<datastore-index kind="areaData" ancestor="false" source="manual">
+        <property name="stationName" direction="asc"/>
+        <property name="geohash6" direction="asc"/>
+        <property name="geohash8" direction="asc"/>
+    </datastore-index>
+</datastore-indexes>

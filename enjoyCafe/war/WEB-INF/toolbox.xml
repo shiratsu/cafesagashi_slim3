@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<toolbox>
+  <tool>
+    <key>browser</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.BrowserSnifferTool</class>
+  </tool>
+  <tool>
+    <key>context</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.ContextTool</class>
+  </tool>
+  <tool>
+    <key>cookies</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.CookieTool</class>
+  </tool>
+  <tool>
+    <key>import</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.ImportTool</class>
+  </tool>
+  <tool>
+    <key>params</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.ParameterParser</class>
+  </tool>
+  <tool>
+    <key>render</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.ViewRenderTool</class>
+    <parameter name="catch.exceptions" value="true"/>
+  </tool>
+  <tool>
+    <key>text</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.ViewResourceTool</class>
+    <parameter name="bundles" value="resources,otherStuff"/>
+  </tool>
+  <tool>
+    <key>alternator</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.AlternatorTool</class>
+  </tool>
+  <tool>
+    <key>date</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.ComparisonDateTool</class>
+    <parameter name="format" value="yyyy/MM/dd"/>
+    <parameter name="depth" value="2"/>
+    <parameter name="skip" value="month"/>
+  </tool>
+  <tool>
+    <key>esc</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.EscapeTool</class>
+  </tool>
+  <tool>
+    <key>mill</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.IteratorTool</class>
+  </tool>
+  <tool>
+    <key>lists</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.ListTool</class>
+  </tool>
+  <tool>
+    <key>math</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.MathTool</class>
+  </tool>
+  <tool>
+    <key>number</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.NumberTool</class>
+    <parameter name="format" value="#0.0"/>
+  </tool>
+  <tool>
+    <key>sorter</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.SortTool</class>
+  </tool>
+</toolbox>

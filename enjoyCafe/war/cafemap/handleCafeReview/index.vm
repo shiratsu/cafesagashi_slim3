@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>カフェデータレビュー投稿</title>
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+  </head>
+
+  <body>
+   <a href="/top/">TOP</a>
+   <a href="/cafemap/feedCafe/">喫茶店リスト</a>
+   #if($reqParam.cafeId != "")
+   	<a href="/cafemap/handleCafeReview/?cafeId=$reqParam.cafeId">喫茶店レビューへ</a>
+   #end
+   <hr />
+   <h1>データ入力画面</h1>
+   
+   	<form action="/cafemap/handleCafeReview/" method="POST">
+   		ニックネーム:<input type="text" name="nickName" value="" />
+   		レビュー:
+   		<textarea name="reviewContent"></textarea>
+   		<input type="hidden" name="cafeId" value="#if($reqParam.cafeId != "")$reqParam.cafeId#end" />
+   		<input type="submit" name="postReview" value="送信" />
+	</form>
+	<hr />
+	#foreach($data in $reviewList)
+		<p>投稿時間：#if($data.updateDate)$data.updateDate#end</p>
+		<p>ニックネーム：#if($data.nickName)$data.nickName#end</p>
+		<p>レビュー内容：#if($data.reviewContent)$data.reviewContent#end</p>
+		<hr />
+	#end
+  </body>
+</html>

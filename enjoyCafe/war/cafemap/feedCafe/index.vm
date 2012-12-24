@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>カフェ一覧</title>
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+  </head>
+  <body>
+<table>
+<tr>
+<td><a href="/top/">トップページへ</a></td>
+</tr>
+</table>
+   	<form name="cafeSearch" action="/cafemap/feedCafe/" method="GET">
+   		店名検索<br />
+   		店名：<input type="text" name="storeName" value="#if($reqParam.storeName)$reqParam.storeName#end" /><br />
+   		<hr />
+   		場所検索（駅以外）<br />
+   		場所：<input type="text" name="pointName" value="#if($reqParam.pointName)$reqParam.pointName#end" /><br />
+   		<hr />
+   		こだわり検索<br />
+   		喫煙OK:<input type="checkbox" name="tabako" value="1" #if($reqParam.tabako)checked="true"#end />
+   		禁煙席あり:<input type="checkbox" name="kinen" value="1" #if($reqParam.kinen)checked="true"#end />
+   		個室あり:<input type="checkbox" name="koshitsu" value="1" #if($reqParam.koshitsu)checked="true"#end />
+   		PC電源あり:<input type="checkbox" name="pc" value="1" #if($reqParam.pc)checked="true"#end />
+   		wifi(公衆無線LAN)あり:<input type="checkbox" name="wifi" value="1" #if($reqParam.wifi)checked="true"#end />
+   		深夜営業（２２時以降）:<input type="checkbox" name="shinya" value="1" #if($reqParam.shinya)checked="true"#end />
+   		テラス席あり:<input type="checkbox" name="terace" value="1" #if($reqParam.terace)checked="true"#end />
+   		ペット同伴OK:<input type="checkbox" name="pet" value="1" #if($reqParam.pet)checked="true"#end /><br />
+   		<hr />
+   		雰囲気検索<br />
+   		デート向き:
+   		<select name="dateMuki">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.dateMuki == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.dateMuki == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.dateMuki == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.dateMuki == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.dateMuki == "5")selected="true"#end>5</option>
+   		</select> 		
+   		ひとりでゆったり:
+   		<select name="only">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.only == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.only == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.only == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.only == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.only == "5")selected="true"#end>5</option>
+   		</select>
+   		
+   		友達とまったり:
+   		<select name="friendMattari">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.friendMattari == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.friendMattari == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.friendMattari == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.friendMattari == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.friendMattari == "5")selected="true"#end>5</option>
+   		</select>
+   		多人数OK:
+   		<select name="manyPerson">
+   			<option value=""></option>
+   			<option value="1" #if($reqParam.manyPerson == "1")selected="true"#end>1</option>
+   			<option value="2" #if($reqParam.manyPerson == "2")selected="true"#end>2</option>
+   			<option value="3" #if($reqParam.manyPerson == "3")selected="true"#end>3</option>
+   			<option value="4" #if($reqParam.manyPerson == "4")selected="true"#end>4</option>
+   			<option value="5" #if($reqParam.manyPerson == "5")selected="true"#end>5</option>
+   		</select><br />
+   		<hr />
+   		すいてる時間<br />
+   		<hr />
+   		店舗フラグ<br />
+   		スターバックス：<input type="checkbox" name="storeFlag1" value="1" #if($reqParam.storeFlag1) checked="true" #end />
+   		ドトール：<input type="checkbox" name="storeFlag2" value="1" #if($reqParam.storeFlag2) checked="true" #end />
+   		タリーズ：<input type="checkbox" name="storeFlag3" value="1" #if($reqParam.storeFlag3) checked="true" #end />
+   		サンマルクカフェ：<input type="checkbox" name="storeFlag4" value="1" #if($reqParam.storeFlag4) checked="true" #end />
+   		エクセルシオール：<input type="checkbox" name="storeFlag5" value="1" #if($reqParam.storeFlag5) checked="true" #end />
+   		シアトルズベスト：<input type="checkbox" name="storeFlag6" value="1" #if($reqParam.storeFlag6) checked="true" #end />
+   		ベローチェ：<input type="checkbox" name="storeFlag7" value="1" #if($reqParam.storeFlag7) checked="true" #end />
+   		カフェドクリエ：<input type="checkbox" name="storeFlag8" value="1" #if($reqParam.storeFlag8) checked="true" #end />
+   		コメダ珈琲：<input type="checkbox" name="storeFlag9" value="1" #if($reqParam.storeFlag9) checked="true" #end />
+   		個人店：<input type="checkbox" name="storeFlagZ" value="1" #if($reqParam.storeFlagZ) checked="true" #end />
+   		<hr />
+   		削除一覧<br />
+   		<input type="checkbox" name="deleteFlag" value="1" #if($reqParam.deleteFlag) checked="true" #end />
+   		<hr />
+   		geohashがセットされてないフラグ<br />
+   		<input type="checkbox" name="geohashNotFlag" value="1" #if($reqParam.geohashNotFlag) checked="true" #end /><br />
+   		端末で検索：<input type="text" name="deviceId" value="#if($reqParam.deviceId)$reqParam.deviceId#end" /><br />
+   		<input type="hidden" name="positionFlag" value="1" />
+   		<input type="hidden" name="offset" value="0" />
+   		<input type="hidden" name="limit" value="1000"  />
+   		<input type="submit" name="search" value="検索" />
+   	</form>
+   	#if($searchFlag == true)
+   		検索件数：$searchCount件<br />
+   		<hr />
+   		 #foreach($data in $cafeList)
+   		 	<font color="red">基本情報</font><br />
+   		 	<font color="red">id：</font><a href="/cafemap/postCafe/?key=$data.key">$data.key</a>&nbsp;
+   		 	<font color="red">ストア名称：</font>$data.storeName &nbsp;
+   		 	<font color="red">ストア名称メイン：</font>$data.storeMainName &nbsp;
+   		 	<font color="red">ストア名称サブ：</font>$data.storeSubName &nbsp;
+   		 	<font color="red">ストアの説明：</font>$data.storeCaption &nbsp;
+   		 	<font color="red">郵便番号：</font>$data.zipCode &nbsp;
+   		 	<font color="red">電話番号：</font>$data.phoneNumber &nbsp;
+   		 	#if($data.userSendFlag == 1)ユーザ投稿&nbsp;#end<br />
+   		 	<font color="red">投稿者：</font>$data.nickName &nbsp;
+   		 	<font color="red">店舗会社：</font>&nbsp;
+   		 	#if($data.storeFlag == "1")
+   		 		スターバックス
+   		 	#elseif($data.storeFlag == "2")
+   		 		ドトール
+   		 	#elseif($data.storeFlag == "3")
+   		 		タリーズ
+   		 	#elseif($data.storeFlag == "4")
+   		 		サンマルクカフェ
+   		 	#elseif($data.storeFlag == "5")
+   		 		エクセルシオール
+   		 	#elseif($data.storeFlag == "6")
+   		 		シアトルズベスト
+   		 	#elseif($data.storeFlag == "7")
+   		 		ベローチェ
+   		 	#elseif($data.storeFlag == "8")
+   		 		カフェドクリエ
+   		 	#elseif($data.storeFlag == "9")
+   		 		コメダ珈琲
+   		 	#elseif($data.storeFlag == "10")
+   		 	#elseif($data.storeFlag == "Z")
+   		 		個人店
+   		 	#end &nbsp;
+   		 	<font color="red">ストアの住所：</font>$data.storeAddress &nbsp;
+   		 	<font color="red">緯度：</font>$data.lat &nbsp;<font color="red">緯度：</font>$data.lon &nbsp;
+   		 	<font color="red">geohash4：</font>$data.geohash4 &nbsp;
+   		 	<font color="red">geohash5：</font>$data.geohash5 &nbsp;
+   		 	<font color="red">geohash6：</font>$data.geohash6 &nbsp;
+   		 	<font color="red">geohash8：</font>$data.geohash8 &nbsp; 
+   		 	<font color="red">geohashAll：</font>$data.geohashAll &nbsp;
+   		 	<font color="red">geohashAround：</font>$data.geohashAround &nbsp;
+   		 	<br />
+   		 	<font color="red">こだわり</font><br />
+   		 	#if($data.tabako == 1)喫煙OK&nbsp;#end
+   		 	#if($data.kinen == 1)禁煙&nbsp;#end
+   		 	#if($data.koshitsu == 1)個室あり&nbsp;#end
+   		 	#if($data.wifi == 1)wifiあり&nbsp;#end
+   		 	#if($data.pc == 1)PC電源あり&nbsp;#end
+   		 	#if($data.shinya == 1)深夜営業あり&nbsp;#end
+   		 	#if($data.terace == 1)テラス&nbsp;#end
+   		 	#if($data.pet == 1)ペットOK &nbsp;&nbsp;#end<br />
+   		 	<font color="red">雰囲気</font><br />
+   		 	<font color="red">デート向き：</font>$data.dateMuki &nbsp;
+   		 	<font color="red">友達とまったり：</font>$data.friendMattari &nbsp;
+   		 	<font color="red">ひとりでゆったり：</font>$data.only &nbsp;
+   		 	<font color="red">多人数OK：</font>$data.manyPerson &nbsp;
+   		 	<font color="red">イイネ：</font>$data.iine &nbsp;<br />
+   		 	<font color="red">端末ID：</font>$data.deviceId <br />
+   		 	
+			<hr />
+			
+		#end
+	#end
+
+</body>
+</html>

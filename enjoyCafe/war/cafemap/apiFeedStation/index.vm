@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Results>
+	<statuCode>200</statusCode>
+	<ResultCount>$searchCount</ResultCount>
+	#foreach($data in $stationList)
+	<Result>
+		<key>$data.key</key>
+		<rcCode>$data.rcCode</rcCode>
+		<lineCode>$data.lineCode</lineCode>
+		<stationCode>$data.stationCode</stationCode>
+		<lineSort>$data.lineSort</lineSort>
+		<stationSort>$data.stationSort</stationSort>
+		<stationGroup>$data.stationGroup</stationGroup>
+		<rcType>$data.rcType</rcType>
+		<rcName>$data.rcName</rcName>
+		<lineName>$data.lineName</lineName>
+		<stationName>$data.stationName</stationName>
+		<prefCode>$data.prefCode</prefCode>
+		<lat>$data.lat</lat>
+		<lon>$data.lon</lon>
+		<geohash5>$data.geohash4</geohash5>
+		<geohash5>$data.geohash5</geohash5>
+		<geohash6>$data.geohash6</geohash6>
+		<geohash8>$data.geohash8</geohash8>
+		<geohashAll>$data.geohashAll</geohashAll>
+		<geohashAround>$data.geohashAround</geohashAround>
+		<updateDate>$data.updateDate</updateDate>
+	</Result>
+	#end
+</Results>
